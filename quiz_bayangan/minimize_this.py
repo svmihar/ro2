@@ -33,7 +33,7 @@ solution = minimize(objective,x0,method='SLSQP',\
 x = solution.x
 
 # show final objective
-print('Final SSE Objective: ' + str(objective(x)))
+print('Final Objective: ' + str(objective(x)))
 
 # print solution
 print('Solution')
