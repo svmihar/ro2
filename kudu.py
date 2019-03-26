@@ -1,21 +1,19 @@
-from scipy.spatial import distance
-from math import sqrt
-#Y = cdist(XA, XB, 'euclidean')
-a = (0,20)
-b = (20,0)
-distance1 = []
-distance2 = []
+from numpy import sqrt
+from scipy.optimize import minimize
 
-def euc(x,y): 
-    euclidean_distance = sqrt( (x[0]-y[0])**2 + (x[1]-y[1])**2 )
-    return euclidean_distance 
+def obj(x): 	
+	return sqrt((x[0]-20)**2 + x[1]**2) + sqrt(x[0]**2 + (x[1]-20)**2)
+def constraint(x): 
+	return(x[0]**2 + x[1]**2 - 400**2)
 
-for i in range(400): 
-    for j in range(400): 
-        x = (i,j)
-        print(x)
-        distance1.append(euc(x,a))
-        distance2.append(euc(x,b))
-        
+const={
+	'type': 'ineq', 
+	'fun': constraint
+}
+x0 = (0,0)
 
-print(max(distance1), max(distance2))
+solution = minimize(obj, x0, constraints=const)
+print(solution['fun'])
+print(solution['x'])
+
+
