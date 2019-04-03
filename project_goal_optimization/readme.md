@@ -9,7 +9,21 @@ As long as we satisfy the goal, we do not care by how much. If we cannot satisfy
 We try to achieve as low a value as possible. Any lower priority goals are not allowed to result in an increase of this value (which is equivalent to not allowing any change at all).
 In this example, we will be specifying two goals, on for each type. The higher priority goal will be to maintain the water level of the storage element between two levels. The lower priority goal will be to minimize the total volume pumped.
 
-## we need some researc papers
+## research paper menarik
+
+## implementasi goal programming 
+
+## penjelasan algoritma
+
+
+
+--------
+
+
+## bikin ppt 
+
+------
+# references
 
 ## contoh soal cantik 
 [multivariable optimization pake prioritas](http://prejudice.tripod.com/ME30B/two_gp.htm)
