@@ -30,7 +30,7 @@ goals."
 - biasa diguanakn di ms/or (management science / operation research)
   - multiple criteria decision making (mcdm)
   - solving managerial problems when multiple objectives are present
-  ![](/img/bagian_GP_pada_MSOR.png)
+  ![](img/bagian_GP_pada_MSOR.png)
 --------
 
 
