@@ -17,7 +17,10 @@ optimization gives a result which comes 'as close as possible' to the indicated
 goals." 
 
 ## research paper menarik
+> jauh2 dari fuzzy
 - https://www.sciencedirect.com/science/article/pii/S0305048306001241 -- goal programming on recycling system -- [accessed 3-Apr-19, 11.38]
+- https://link.springer.com/article/10.1007/BF02032309 http://sci-hub.tw/https://link.springer.com/article/10.1007/BF02032309 -- membahas berbagai macam topik GP -- [accessed 3-apr-19, 12.20]
+- 
 
 
 ## implementasi goal programming 
