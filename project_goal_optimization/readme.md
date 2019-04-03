@@ -35,8 +35,10 @@ goals."
     - s.t.: $\sum_{j=1}^n a_{ij} x_{j} - d_i^+ + d_i^- = b_i$
 - biasa diguanakn di ms/or (management science / operation research)
   - multiple criteria decision making (mcdm)
-  - solving managerial problems when multiple objectives are present
-  ![](/img/bagian_GP_pada_MSOR.png)
+  - solving managerial problems when multiple objectives are present   
+  ![](img/bagian_GP_pada_MSOR.png)
+
+  
 --------
 
 
