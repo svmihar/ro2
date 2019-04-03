@@ -17,6 +17,8 @@ optimization gives a result which comes 'as close as possible' to the indicated
 goals." 
 
 ## research paper menarik
+- https://www.sciencedirect.com/science/article/pii/S0305048306001241 -- goal programming on recycling system -- [accessed 3-Apr-19, 11.38]
+
 
 ## implementasi goal programming 
 - two version of GP (Chanes and Cooper, 1961)
