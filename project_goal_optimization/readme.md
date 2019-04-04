@@ -80,8 +80,15 @@ goals."
       - Fractional 
   - Pareto efficiency 
     - objective: objective not improved without worsening the value of other objective (objective = goal)
-    - 
-
+### chebyshev goal programming result: 
+```python 
+x1 =  73.0
+x2 =  117.0
+The first goal is overachieved by  14.0
+The second goal is overachieved by  16.0
+The third goal is underachieved by  170.0
+The fourth goal is fully satisfied
+```
   
 --------
 
