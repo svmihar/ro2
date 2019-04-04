@@ -24,6 +24,23 @@ $y_2 number of associate professors, without terminal degree, <br>
 $x_6 =$ number of full professors professors, without terminal degree, <br>
 $x_7 =$ number of part-time faculty without terminal degree, <br>
 $x_8 =$ number of special professors without terminal degree, <br>
-
+**dan berlanjut, agak males sih ngetiknya, banyak banget, pdfnya image scan(gabisa dicopy). ini tabel dari papernya untuk sementara...**
 
 ![](img/rp1-variable-table-01.PNG)
+
+#### Constraints :
+formulanya akan ditulis nanti... ada 9 constraint in total
+- Accreditation
+  - certain percentage of academic staff must be full-time.
+  - certain percentage of academic staff (either on undergraduate or graduate) required to possess terminal degree.
+  - ada 1 constraint lagi, tapi di paper bilangnya "not necessary" (nanti akan dijabarkan lebih lanjut..)
+- Total Number of Academic Staff
+- Distribution of Academic Staff
+- Number of Staff
+- Number of Graduate Research Assistants
+- Salary Increase -- perlu adanya peningkatan gaji secara berkala supaya kualitas staff terjaga.
+- Total Payroll Budget 
+
+#### Objective Function :
+Minimize deviations. With priority factor based on univesity policies, conditions, etc.
+
