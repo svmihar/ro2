@@ -1,6 +1,5 @@
 # goal programming 
-
-programming = optimization 
+multiple criteria wdecision-making (MCDM/A)
 
 ## apa itu 
 Goal programming is a way to satisfy (sometimes conflicting) goals by ranking the goals by priority. The optimization algorithm will attempt to optimize each goal one at a time, starting with the goal with the highest priority and moving down through the list. Even if a goal cannot be satisfied, the goal programming algorithm will move on when it has found the best possible answer. Goals can be roughly divided into two types:
@@ -37,6 +36,51 @@ goals."
   - multiple criteria decision making (mcdm)
   - solving managerial problems when multiple objectives are present   
   ![](img/bagian_GP_pada_MSOR.png)
+
+  ### Practical Goal Programming (Dylan jones, Mehrdad Tamiz, 2010)
+  - Jenis
+    - Generic
+    - Distance Based
+      - **Lexicographic**
+        - *priorities goals over others.*
+        - has a number of priority levels
+        - predefined set of goals 
+        - no direct 'trade off' comparisons between goals. 
+        - contoh?
+      - **Weighted** 
+        - chooses set of decision variable values which together *make the achievement function lowest*. 
+          - makes other goals have a poor result
+        - allow directr trade off between unwanted deviational variables by placing the in a weighted, normalized single achievement function 
+          - achievement function: variables that penalizes objective function
+        - contoh
+      - Chebyshev (Minmax Goal Programming) 
+        - uses $L_{\infty}$ distance metric
+          - $L_{\infty}$ adalah sebuah norma, dimana norma biasanya disebut sebagai dimensi vektor [definisi lengkap](https://rorasa.wordpress.com/2012/05/13/l0-norm-l1-norm-l2-norm-l-infinity-norm/)
+          - where p is the $L_p$ norm
+          - $\|x\|_p = \sqrt[p]{\Sigma_i |x_i|^p}$
+            - $L_1$ norm: 
+              - SAD (sum of absolute distance)
+              - MAE (mean absolute error)
+            - $L_2$ norm: 
+              - most popular norm 
+              - SSD (Sum of squared distance)
+              - MSE (Mean Squared Error )
+              - Euclidean Distance
+              - $\|x\|_2 = \sqrt{\Sigma_i x_i^2}$
+            - $L_{\infty} norm$
+              - maximum entrires magnitude of that vector. 
+              - $\|x\|_{\infty} = \sqrt{\Sigma_i x_i^\infty}$
+              - $\|x\|_{\infty} = max(|x_i|)$
+        - achieves balance between achievement function and objective function 
+        - can find optimal soultion for linear models, that don't have extreme point in decision space
+        - ![](img/minmaxgp.png)
+    - Decision Based 
+      - Fuzzy 
+      - Integer and Binary 
+      - Fractional 
+  - Pareto efficiency 
+    - objective: objective not improved without worsening the value of other objective (objective = goal)
+    - 
 
   
 --------
