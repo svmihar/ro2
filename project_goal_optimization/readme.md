@@ -50,7 +50,7 @@ goals."
         - contoh?
       - **Weighted** 
         - chooses set of decision variable values which together *make the achievement function lowest*. 
-          - makes other goals have a poor result
+          - makes other goals have a poor result  
         - allow directr trade off between unwanted deviational variables by placing the in a weighted, normalized single achievement function 
           - achievement function: variables that penalizes objective function
         - contoh
