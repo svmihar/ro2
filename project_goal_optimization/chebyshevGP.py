@@ -93,4 +93,4 @@ elif model.p4.value > 0:
     print("The fourth goal is overachieved by ",
           model.p4.value)
 else:
-    print("The fourth goal is fully satisfied")
+    print("The fourth goal is fully satisfied", model.p4.value)
