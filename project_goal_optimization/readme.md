@@ -3,7 +3,7 @@ multiple criteria decision-making (MCDM/A)
 
 ## tools
 - python 
-  - pyomo (making the mathematical to pythonic code)
+  - pyomo (making the mathematical model to pythonic code)
   - LP solver:
     - [GNU Linear Programming Kit](https://www.gnu.org/software/glpk/) 
       - used when feasible solution is available
@@ -18,7 +18,7 @@ discussed topics
 - using primal-dual Linear Programming for feasible solutions
 
 problems: 
-- can't use chebyshev, classical nor lexicographical due to bounds problems (primal-dual)
+- can't use chebyshev, classical nor lexicographical due to duality problem (primal-dual)
 - no feasible solutions from pyomo
 
 
@@ -35,6 +35,11 @@ In this example, we will be specifying two goals, on for each type. The higher p
 "Whether goals or attainable or not, an objective may then be stated in which
 optimization gives a result which comes 'as close as possible' to the indicated
 goals." 
+
+
+[ADD MIRDHA HERE] 
+
+
 
 ## research paper menarik
 [Go to Research Paper Directory](https://github.com/atriple/ro2/tree/master/project_goal_optimization/research_paper)
