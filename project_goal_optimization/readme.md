@@ -1,5 +1,26 @@
 # goal programming 
-multiple criteria wdecision-making (MCDM/A)
+multiple criteria decision-making (MCDM/A)
+
+## tools
+- python 
+  - pyomo (making the mathematical to pythonic code)
+  - LP solver:
+    - [GNU Linear Programming Kit](https://www.gnu.org/software/glpk/) 
+      - used when feasible solution is available
+    - [CBC](https://projects.coin-or.org/Cbc)
+      - used to detect infeasible solution
+
+## skripsi simulation 
+[model goal programming untuk optimasi produkaksesoris]()
+discussed topics
+- modelling the problem 
+- solving with weighted GP 
+- using primal-dual Linear Programming for feasible solutions
+
+problems: 
+- can't use chebyshev, classical nor lexicographical due to bounds problems (primal-dual)
+- no feasible solutions from pyomo
+
 
 ## apa itu 
 Goal programming is a way to satisfy (sometimes conflicting) goals by ranking the goals by priority. The optimization algorithm will attempt to optimize each goal one at a time, starting with the goal with the highest priority and moving down through the list. Even if a goal cannot be satisfied, the goal programming algorithm will move on when it has found the best possible answer. Goals can be roughly divided into two types:
@@ -75,33 +96,3 @@ goals."
       - Fractional 
   - Pareto efficiency 
     - objective: objective not improved without worsening the value of other objective (objective = goal)
-### chebyshev goal programming result: 
-```python 
-x1 =  73.0
-x2 =  117.0
-The first goal is overachieved by  14.0
-The second goal is overachieved by  16.0
-The third goal is underachieved by  170.0
-The fourth goal is fully satisfied
-```
-  
---------
-
-
-## bikin ppt 
-
-------
-# references
-
-## contoh soal cantik 
-[multivariable optimization pake prioritas](http://prejudice.tripod.com/ME30B/two_gp.htm)
-## contoh soal pake solver (Excel)
-https://www.youtube.com/watch?v=Ytzr3LY6iS0
-https://www.youtube.com/watch?v=iIdDPl2nkYo
-
-## references
-- [optimization with python](https://www2.hawaii.edu/~jonghyun/classes/S18/CEE696/schedule.html)
-    - only needed [this](https://www2.hawaii.edu/~jonghyun/classes/S18/CEE696/files/04_scipy_optimize.pdf)
-    - and [this](https://www2.hawaii.edu/~jonghyun/classes/S18/CEE696/files/08_scipy_optimize2.pdf)
-
-
