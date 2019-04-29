@@ -1,3 +1,6 @@
+## simulasi pada contoh soal
+[view here](https://github.com/svmihar/ro2/blob/master/project_goal_optimization/application/Goal%20Programming%20with%20Python.ipynb)
+
 
 ## classicalGP
 
