@@ -37,7 +37,7 @@ optimization gives a result which comes 'as close as possible' to the indicated
 goals." 
 
 
-[ADD MIRDHA HERE]()
+[ADD MIRDHA HERE](https://github.com/svmihar/ro2/blob/master/project_goal_optimization/referensi/goal%20programming-mirdha.pdf)
 
 
 
