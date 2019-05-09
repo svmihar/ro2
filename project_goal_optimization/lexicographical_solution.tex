@@ -1,0 +1,112 @@
+\documentclass{article}
+\usepackage{amsmath} % Advanced math typesetting
+\usepackage[utf8]{inputenc} % Unicode support (Umlauts etc.)
+\usepackage{hyperref} % Add a link to your document
+\usepackage{graphicx} % Add pictures to your document
+\usepackage{listings} % Source code formatting and highlighting
+
+\begin{document}
+
+\section{The General Model} % ini sebenarnya gausah kalau yg weighted udah dibuat...
+\subsection{Variables}
+$x_1 = $ number of shirts, \\
+$x_2 = $ number of jackets\\
+
+\subsection{Constraints}
+$2x_1 + 4x_2 \leq 600$ Cotton Stock \\
+$5x_1 + 3x_2 \leq 700$ Linen Stock \\
+$100x_1 + 90x_2 \geq 18000$ Weekly Profit minimum \\
+$2x_1 + 2x_2 \leq 380$ Man-hours available \\
+$x_1 + x_2 \leq 200$ Machine Limitation \\
+$x_1$,$x_2 \geq 60$ Minimum Production's Contract 
+
+\section{Lexicographical Solution}
+
+Lexicographical Goal Programming use priority levels for each goals. The linear program will run separately for each priority level, running in sequence of order from the highest to lowest priority. \\
+\\
+This will be the priority level for each of the goals :
+\begin{description}
+  \item[$\bullet$ Priority Level 1] Man-hours (Goal 4)
+  \item[$\bullet$ Priority Level 2] Weekly Profit (Goal 3)
+  \item[$\bullet$ Priority Level 3] Cotton and Linen stocks to buy (Goal 1 and Goal 2)
+\end{description}
+
+The first linear program is to solve Priority Level 1, which is to minimize man hour excess.
+\\
+\\
+\textbf{Priority Level 1 LP}\\
+$Minimize \ d_4^{+}$ \\
+$Subject \ to$
+\begin{align*}
+2x_1 + 4x_2 + d_1^{-} - d_1^{+} &= 600\\
+5x_1 + 3x_2 + d_2^{-} - d_2^{+} &= 700\\
+100x_1 + 90x_2 + d_3^{-} - d_3^{+} &= 18000\\
+2x_1 + 2x_2 + d_4^{-} - d_4^{+} &= 600 \\
+x_1 + x_2 \leq 200 \\
+x_1, x_2 \geq 60 \\
+d_1^{-}, d_1^{+}, d_2^{-}, d_2^{+}, d_3^{-}, d_3^{+}, d_4^{-}, d_4^{+} \geq 0
+\end{align*}
+
+This linear program can be solved using any method such as Simplex Method, Graphical Method or using any Solver. The results we get is $d_4^{+} = 0$ which fully satisfy the goal. \\
+
+The idea is to use the previous results for the next priority goal we want to accomplish. We will use the results from first Linear Program as a constraints for the next one. The second Linear Program is to achieve weekly profit.\\
+\\
+\textbf{Priority Level 2 LP}\\
+$Minimize \ d_3^{-}$ \\
+$Subject \ to$
+\begin{align*}
+2x_1 + 4x_2 + d_1^{-} - d_1^{+} &= 600\\
+5x_1 + 3x_2 + d_2^{-} - d_2^{+} &= 700\\
+100x_1 + 90x_2 + d_3^{-} - d_3^{+} &= 18000\\
+2x_1 + 2x_2 + d_4^{-} - d_4^{+} &= 600 \\
+d_4^{+} = 0 \\
+x_1 + x_2 \leq 200 \\
+x_1, x_2 \geq 60 \\
+d_1^{-}, d_1^{+}, d_2^{-}, d_2^{+}, d_3^{-}, d_3^{+}, d_4^{-}, d_4^{+} \geq 0 
+\end{align*}
+
+The results we get from the second Linear Program is $d_3^{-} = 0$ which fully satisfy the second level priority goal. \\
+
+The third Linear Program will use the second Linear Program's constraints and its results. \\
+\\
+\textbf{Priority Level 3 LP}\\
+$Minimize \ d_1^{+} + d_2^{+}$ \\
+$Subject \ to$
+\begin{align*}
+2x_1 + 4x_2 + d_1^{-} - d_1^{+} &= 600\\
+5x_1 + 3x_2 + d_2^{-} - d_2^{+} &= 700\\
+100x_1 + 90x_2 + d_3^{-} - d_3^{+} &= 18000\\
+2x_1 + 2x_2 + d_4^{-} - d_4^{+} &= 600 \\
+d_4^{+} = 0 \\
+d_3^{-} = 0  \\
+x_1 + x_2 \leq 200 \\
+x_1, x_2 \geq 60 \\
+d_1^{-}, d_1^{+}, d_2^{-}, d_2^{+}, d_3^{-}, d_3^{+}, d_4^{-}, d_4^{+} \geq 0 
+\end{align*}
+The result for this linear program is $d_1^{+} = 0$, $d_1^{-} = 20$, $d_2^{+} = 50$ and $d_2^{-} = 0$ \\
+
+This will be the final results :
+\begin{align*}
+x_1 &= 90 \\
+x_2 &= 100 \\
+d_1^{+} &= 0, \ d_1^{-} = 20 \\
+d_2^{+} &= 50, d_2^{-} = 0 \\
+d_3^{+} &= 0, \ d_3^{-} = 0 \\
+d_4^{+} &= 0, \ d_4^{-} = 0 
+\end{align*}
+
+
+\begin{table}[]
+\begin{tabular}{|l|l|l|}
+\hline
+Goal & Target & Achieved Value \\ \hline
+1    & 600    & 580            \\ \hline
+2    & 700    & 750            \\ \hline
+3    & 18000  & 18000          \\ \hline
+4    & 380    & 380            \\ \hline
+\end{tabular}
+\end{table}
+ 
+
+\end{document}
+	

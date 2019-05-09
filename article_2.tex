@@ -5,6 +5,7 @@
 \documentclass[twoside,twocolumn]{article}
 
 \usepackage{blindtext} % Package to generate dummy text throughout this template 
+\usepackage{amsmath} % package for aligntment
 \usepackage[sc]{mathpazo} % Use the Palatino font
 \usepackage[T1]{fontenc} % Use 8-bit encoding that has 256 glyphs
 \linespread{1.05} % Line spacing - Palatino needs more space between lines
@@ -35,12 +36,38 @@
 \pagestyle{fancy} % All pages have headers and footers
 \fancyhead{} % Blank out the default header
 \fancyfoot{} % Blank out the default footer
-\fancyhead[C]{Running title $\bullet$ May 2016 $\bullet$ Vol. XXI, No. 1} % Custom header text
+\fancyhead[C]{Goal Programming $\bullet$ May 2019 } % Custom header text
 \fancyfoot[RO,LE]{\thepage} % Custom footer text
 
 \usepackage{titling} % Customizing the title section
 
 \usepackage{hyperref} % For hyperlinks in the PDF
+
+%coding formatting
+\usepackage{listings}
+\usepackage{color}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{frame=tb,
+  language=Python,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=3
+}
+
 
 %----------------------------------------------------------------------------------------
 %	TITLE SECTION
@@ -100,63 +127,416 @@ solutions are no different. The difference lies only in
 
 %------------------------------------------------
 
+\section{General Form}
+
+
+%------------------------------------------------
+
 \section{Problem}
 
-Maecenas sed ultricies felis. Sed imperdiet dictum arcu a egestas. 
-\begin{itemize}
-\item Donec dolor arcu, rutrum id molestie in, viverra sed diam
-\item Curabitur feugiat
-\item turpis sed auctor facilisis
-\item arcu eros accumsan lorem, at posuere mi diam sit amet tortor
-\item Fusce fermentum, mi sit amet euismod rutrum
-\item sem lorem molestie diam, iaculis aliquet sapien tortor non nisi
-\item Pellentesque bibendum pretium aliquet
-\end{itemize}
+\subsection{Variables}
+$x_1 = $ number of shirts, \\
+$x_2 = $ number of jackets\\
+
+\subsection{Constraints}
+$2x_1 + 4x_2 \leq 600$ Cotton Stock \\
+$5x_1 + 3x_2 \leq 700$ Linen Stock \\
+$100x_1 + 90x_2 \geq 18000$ Weekly Profit minimum \\
+$2x_1 + 2x_2 \leq 380$ Man-hours available \\
+$x_1 + x_2 \leq 200$ Machine Limitation \\
+$x_1$,$x_2 \geq 60$ Minimum Production's Contract 
+
+
+%------------------------------------------------
+
+\section{Methods}
+
+\subsection{Lexicographical}
+
+Lexicographical Goal Programming use priority levels for each goals. The linear program will run separately for each priority level, running in sequence of order from the highest to lowest priority. \\
+\\
+This will be the priority level for each of the goals :
+\begin{description}
+  \item[$\bullet$ Priority Level 1] Man-hours (Goal 4)
+  \item[$\bullet$ Priority Level 2] Weekly Profit (Goal 3)
+  \item[$\bullet$ Priority Level 3] Cotton and Linen stocks to buy (Goal 1 and Goal 2)
+\end{description}
+
+The first linear program is to solve Priority Level 1, which is to minimize man hour excess.
+\\
+\\
+\textbf{Priority Level 1 LP}\\
+$Minimize \ d_4^{+}$ \\
+$Subject \ to$
+\begin{align*}
+2x_1 + 4x_2 + d_1^{-} - d_1^{+} &= 600\\
+5x_1 + 3x_2 + d_2^{-} - d_2^{+} &= 700\\
+100x_1 + 90x_2 + d_3^{-} - d_3^{+} &= 18000\\
+2x_1 + 2x_2 + d_4^{-} - d_4^{+} &= 600 \\
+x_1 + x_2 &\leq 200 \\
+x_1, x_2 &\geq 60 \\
+d_1^{-}, d_1^{+}, d_2^{-}, d_2^{+}, d_3^{-}, d_3^{+}, d_4^{-}, d_4^{+} &\geq 0
+\end{align*}
+
+This linear program can be solved using any method such as Simplex Method, Graphical Method or using any Solver. The results we get is $d_4^{+} = 0$ which fully satisfy the goal. \\
+
+The idea is to use the previous results for the next priority goal we want to accomplish. We will use the results from first Linear Program as a constraints for the next one. The second Linear Program is to achieve weekly profit.\\
+\\
+\textbf{Priority Level 2 LP}\\
+$Minimize \ d_3^{-}$ \\
+$Subject \ to$
+\begin{align*}
+2x_1 + 4x_2 + d_1^{-} - d_1^{+} &= 600\\
+5x_1 + 3x_2 + d_2^{-} - d_2^{+} &= 700\\
+100x_1 + 90x_2 + d_3^{-} - d_3^{+} &= 18000\\
+2x_1 + 2x_2 + d_4^{-} - d_4^{+} &= 600 \\
+d_4^{+} &= 0 \\
+x_1 + x_2 &\leq 200 \\
+x_1, x_2 &\geq 60 \\
+d_1^{-}, d_1^{+}, d_2^{-}, d_2^{+}, d_3^{-}, d_3^{+}, d_4^{-}, d_4^{+} &\geq 0 
+\end{align*}
+
+The results we get from the second Linear Program is $d_3^{-} = 0$ which fully satisfy the second level priority goal. \\
+
+The third Linear Program will use the second Linear Program's constraints and its results. \\
+\\
+\textbf{Priority Level 3 LP}\\
+$Minimize \ d_1^{+} + d_2^{+}$ \\
+$Subject \ to$
+\begin{align*}
+2x_1 + 4x_2 + d_1^{-} - d_1^{+} &= 600\\
+5x_1 + 3x_2 + d_2^{-} - d_2^{+} &= 700\\
+100x_1 + 90x_2 + d_3^{-} - d_3^{+} &= 18000\\
+2x_1 + 2x_2 + d_4^{-} - d_4^{+} &= 600 \\
+d_4^{+} &= 0 \\
+d_3^{-} &= 0  \\
+x_1 + x_2 &\leq 200 \\
+x_1, x_2 &\geq 60 \\
+d_1^{-}, d_1^{+}, d_2^{-}, d_2^{+}, d_3^{-}, d_3^{+}, d_4^{-}, d_4^{+} &\geq 0 
+\end{align*}
+The result for this linear program is $d_1^{+} = 0$, $d_1^{-} = 20$, $d_2^{+} = 50$ and $d_2^{-} = 0$ \\
+
+This will be the final results :
+\begin{align*}
+x_1 &= 90 \\
+x_2 &= 100 \\
+d_1^{+} &= 0, \ d_1^{-} = 20 \\
+d_2^{+} &= 50, d_2^{-} = 0 \\
+d_3^{+} &= 0, \ d_3^{-} = 0 \\
+d_4^{+} &= 0, \ d_4^{-} = 0 
+\end{align*}
+
+\begin{lstlisting}
+// Lexicograhical.py
+# first priority level
+model.obj = Objective(expr = model.p4)
+
+# Define the constraints
+model.con1 = Constraint(expr = 2 * model.x1 +
+    4 * model.x2 + model.n1 - model.p1 == 600)
+model.con2 = Constraint(expr = 5 * model.x1 +
+    3 * model.x2 + model.n2 - model.p2 == 700)
+model.con3 = Constraint(expr = 100 * model.x1 +
+    90 * model.x2 + model.n3 - model.p3 == 18000)
+model.con4 = Constraint(expr = 2 * model.x1 +
+    2 * model.x2 + model.n4 - model.p4 == 380)
+model.con5 = Constraint(expr = model.x1 +
+    model.x2 <= 200)
+model.con6 = Constraint(expr = model.x1 >= 60)
+model.con7 = Constraint(expr = model.x2 >= 60)
+
+# Solve the Goal Programming problem of the
+# first priority level
+opt.solve(model)
+
+# Retrieve the value of the first priority level
+p4 = model.p4.value
+
+# Define the objective function of the
+# second priority level
+model.obj = Objective(expr = model.n3)
+
+# Add a constraint for the value of the first
+# priority level
+model.con8 = Constraint(expr = model.p4 == p4)
+
+# Solve the Goal Programming problem of the
+# second priority level
+opt.solve(model)
+
+# Retrieve the value of the second priority level
+n3 = model.n3.value
+
+# Define the objective function of the
+# third priority level
+model.obj = Objective(expr = model.p1 + model.p2)
+
+# Add a constraint for the value of the second
+# priority level
+model.con9 = Constraint(expr = model.n3 == n3)
+
+# Solve the Goal Programming problem of the
+# third priority level
+opt.solve(model)
+
+# Print the values of the decision variables
+print("x1 = ", model.x1.value)
+print("x2 = ", model.x2.value)
+
+# Print the achieved values for each goal
+if model.n1.value > 0:
+    print("The first goal is underachieved by ",
+          model.n1.value)
+elif model.p1.value > 0:
+    print("The first goal is overachieved by ",
+          model.p1.value)
+else:
+    print("The first goal is fully satisfied")
+
+if model.n2.value > 0:
+    print("The second goal is underachieved by ",
+          model.n2.value)
+elif model.p2.value > 0:
+    print("The second goal is overachieved by ",
+          model.p2.value)
+else:
+    print("The second goal is fully satisfied")
+
+if model.n3.value > 0:
+    print("The third goal is underachieved by ",
+          model.n3.value)
+elif model.p3.value > 0:
+    print("The third goal is overachieved by ",
+          model.p3.value)
+else:
+    print("The third goal is fully satisfied")
+
+if model.n4.value > 0:
+    print("The fourth goal is underachieved by ",
+          model.n4.value)
+elif model.p4.value > 0:
+    print("The fourth goal is overachieved by ",
+          model.p4.value)
+else:
+    print("The fourth goal is fully satisfied")
+\end{lstlisting}
+
+
+\subsection{Weighted}
+
 \blindtext % Dummy text
 
-Text requiring further explanation\footnote{Example footnote}.
+\begin{lstlisting}
+model.obj = Objective(expr = (1 / 600) * model.p1 +
+    (1 / 700) * model.p2 + (2 / 18000) * model.n3 +
+    (3 / 380) * model.p4)
+
+# Define the constraints
+model.con1 = Constraint(expr = 2 * model.x1 +
+    4 * model.x2 + model.n1 - model.p1 == 600)
+model.con2 = Constraint(expr = 5 * model.x1 +
+    3 * model.x2 + model.n2 - model.p2 == 700)
+model.con3 = Constraint(expr = 100 * model.x1 +
+    90 * model.x2 + model.n3 - model.p3 == 18000)
+model.con4 = Constraint(expr = 2 * model.x1 +
+    2 * model.x2 + model.n4 - model.p4 == 380)
+model.con5 = Constraint(expr = model.x1 +
+    model.x2 <= 200)
+model.con6 = Constraint(expr = model.x1 >= 60)
+model.con7 = Constraint(expr = model.x2 >= 60)
+
+# Solve the Goal Programming problem
+opt.solve(model)
+
+# Print the values of the decision variables
+print("x1 = ", model.x1.value)
+print("x2 = ", model.x2.value)
+
+# Print the achieved values for each goal
+if model.n1.value > 0:
+    print("The first goal is underachieved by ",
+          model.n1.value)
+elif model.p1.value > 0:
+    print("The first goal is overachieved by ",
+          model.p1.value)
+else:
+    print("The first goal is fully satisfied")
+
+if model.n2.value > 0:
+    print("The second goal is underachieved by ",
+          model.n2.value)
+elif model.p2.value > 0:
+    print("The second goal is overachieved by ",
+          model.p2.value)
+else:
+    print("The second goal is fully satisfied")
+
+if model.n3.value > 0:
+    print("The third goal is underachieved by ",
+          model.n3.value)
+elif model.p3.value > 0:
+    print("The third goal is overachieved by ",
+          model.p3.value)
+else:
+    print("The third goal is fully satisfied")
+
+if model.n4.value > 0:
+    print("The fourth goal is underachieved by ",
+          model.n4.value)
+elif model.p4.value > 0:
+    print("The fourth goal is overachieved by ",
+          model.p4.value)
+else:
+    print("The fourth goal is fully satisfied")
+\end{lstlisting}
+
+
+
+\subsection{Chebyshev}
+
+\begin{enumerate}
+	\item Determine whether a constraint is soft or hard.
+	\item Add a negative and a positive deviational variable on each constraint. Determine the type of the constraint and add a constraint of the deviational variable(s) to be penalized. For each deviational variable, select a weight. 
+	\item Use a normalization method to scale the deviations.
+	\item Each hard constraint is written as a typical linear programming constraint.
+	\item Add bound constraints to the problem (if applicable).
+\end{enumerate}
+\begin{lstlisting}
+# Define the decision variables
+model.x1 = Var(within = NonNegativeIntegers)
+model.x2 = Var(within = NonNegativeIntegers)
+
+# Define the deviational variables
+model.n1 = Var(within = NonNegativeIntegers)
+model.p1 = Var(within = NonNegativeIntegers)
+model.n2 = Var(within = NonNegativeIntegers)
+model.p2 = Var(within = NonNegativeIntegers)
+model.n3 = Var(within = NonNegativeIntegers)
+model.p3 = Var(within = NonNegativeIntegers)
+model.n4 = Var(within = NonNegativeIntegers)
+model.p4 = Var(within = NonNegativeIntegers)
+
+# Define the variable of maximal deviation
+# from amongst the set of goals
+model.l = Var(within=NonNegativeReals)
+
+# Define the objective function
+model.obj = Objective(expr = model.l)
+
+# Define the constraints
+model.con1 = Constraint(expr = (1 / 600) *
+    model.p1 <= model.l)
+model.con2 = Constraint(expr = (1 / 700) *
+    model.p2 <= model.l)
+model.con3 = Constraint(expr = (2 / 18000) *
+    model.n3 <= model.l)
+model.con4 = Constraint(expr = (3 / 380) *
+    model.p4 <= model.l)
+model.con5 = Constraint(expr = 2 * model.x1 +
+    4 * model.x2 + model.n1 - model.p1 == 600)
+model.con6 = Constraint(expr = 5 * model.x1 +
+    3 * model.x2 + model.n2 - model.p2 == 700)
+model.con7 = Constraint(expr = 100 * model.x1 +
+    90 * model.x2 + model.n3 - model.p3 == 18000)
+model.con8 = Constraint(expr = 2 * model.x1 +
+    2 * model.x2 + model.n4 - model.p4 == 380)
+model.con9 = Constraint(expr = model.x1 +
+    model.x2 <= 200)
+model.con10 = Constraint(expr = model.x1 >= 60)
+model.con11 = Constraint(expr = model.x2 >= 60)
+
+# Solve the Goal Programming problem
+opt.solve(model)
+
+# Print the values of the decision variables
+print("x1 = ", model.x1.value)
+print("x2 = ", model.x2.value)
+
+# Print the achieved values for each goal
+if model.n1.value > 0:
+    print("The first goal is underachieved by ",
+          model.n1.value)
+elif model.p1.value > 0:
+    print("The first goal is overachieved by ",
+          model.p1.value)
+else:
+    print("The first goal is fully satisfied")
+
+if model.n2.value > 0:
+    print("The second goal is underachieved by ",
+          model.n2.value)
+elif model.p2.value > 0:
+    print("The second goal is overachieved by ",
+          model.p2.value)
+else:
+    print("The second goal is fully satisfied")
+
+if model.n3.value > 0:
+    print("The third goal is underachieved by ",
+          model.n3.value)
+elif model.p3.value > 0:
+    print("The third goal is overachieved by ",
+          model.p3.value)
+else:
+    print("The third goal is fully satisfied")
+
+if model.n4.value > 0:
+    print("The fourth goal is underachieved by ",
+          model.n4.value)
+elif model.p4.value > 0:
+    print("The fourth goal is overachieved by ",
+          model.p4.value)
+else:
+    print("The fourth goal is fully satisfied")
+\end{lstlisting}
 
 %------------------------------------------------
 
 \section{Results}
 
-\begin{table}
-\caption{Example table}
+\begin{table}[h]
+\caption{Solution for Lexicographical}
 \centering
-\begin{tabular}{llr}
-\toprule
-\multicolumn{2}{c}{Name} \\
-\cmidrule(r){1-2}
-First name & Last Name & Grade \\
+\begin{tabular}{lllr}
+Goal & Target & Achieved Value \\
 \midrule
-John & Doe & $7.5$ \\
-Richard & Miles & $2$ \\
+1    & 600    & 580            \\ 
+2    & 700    & 750            \\ 
+3    & 18000  & 18000          \\ 
+4    & 380    & 380            \\ 
 \bottomrule
 \end{tabular}
 \end{table}
 
-\blindtext % Dummy text
+\begin{table}[h]
+\caption{Solution for Weighted}
+\centering
+\begin{tabular}{lllr}
+Goal & Target & Achieved Value \\
+\midrule
+1    & 600    & 614 \\ 
+2    & 700    & 716            \\ 
+3    & 18000  & 17830 \\ 
+4    & 380    & 380            \\ 
+\bottomrule
+\end{tabular}
+\end{table}
 
-\begin{equation}
-\label{eq:emc}
-e = mc^2
-\end{equation}
+\begin{table}[h]
+\caption{Solution for Chebyshev}
+\centering
+\begin{tabular}{lllr}
+Goal & Target & Achieved Value \\
+\midrule
+1    & 600    & 614            \\ 
+2    & 700    & 716            \\ 
+3    & 18000  & 17830 			\\ 
+4    & 380    & 380            \\ 
+\bottomrule
+\end{tabular}
+\end{table}
 
-\blindtext % Dummy text
-
-%------------------------------------------------
-
-\section{Discussion}
-
-\subsection{Subsection One}
-
-A statement requiring citation \cite{Figueredo:2009dg}.
-\blindtext % Dummy text
-
-\subsection{Subsection Two}
-
-\blindtext % Dummy text
-
+From the result we have Chebyshev that has most balanced solution
 %----------------------------------------------------------------------------------------
 %	REFERENCE LIST
 %----------------------------------------------------------------------------------------
