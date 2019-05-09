@@ -1,0 +1,176 @@
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[twoside,twocolumn]{article}
+
+\usepackage{blindtext} % Package to generate dummy text throughout this template 
+\usepackage[sc]{mathpazo} % Use the Palatino font
+\usepackage[T1]{fontenc} % Use 8-bit encoding that has 256 glyphs
+\linespread{1.05} % Line spacing - Palatino needs more space between lines
+\usepackage{microtype} % Slightly tweak font spacing for aesthetics
+
+\usepackage[english]{babel} % Language hyphenation and typographical rules
+
+\usepackage[hmarginratio=1:1,top=32mm,columnsep=20pt]{geometry} % Document margins
+\usepackage[hang, small,labelfont=bf,up,textfont=it,up]{caption} % Custom captions under/above floats in tables or figures
+\usepackage{booktabs} % Horizontal rules in tables
+
+\usepackage{lettrine} % The lettrine is the first enlarged letter at the beginning of the text
+
+\usepackage{enumitem} % Customized lists
+\setlist[itemize]{noitemsep} % Make itemize lists more compact
+
+\usepackage{abstract} % Allows abstract customization
+\renewcommand{\abstractnamefont}{\normalfont\bfseries} % Set the "Abstract" text to bold
+\renewcommand{\abstracttextfont}{\normalfont\small\itshape} % Set the abstract itself to small italic text
+
+\usepackage{titlesec} % Allows customization of titles
+\renewcommand\thesection{\Roman{section}} % Roman numerals for the sections
+\renewcommand\thesubsection{\roman{subsection}} % roman numerals for subsections
+\titleformat{\section}[block]{\large\scshape\centering}{\thesection.}{1em}{} % Change the look of the section titles
+\titleformat{\subsection}[block]{\large}{\thesubsection.}{1em}{} % Change the look of the section titles
+
+\usepackage{fancyhdr} % Headers and footers
+\pagestyle{fancy} % All pages have headers and footers
+\fancyhead{} % Blank out the default header
+\fancyfoot{} % Blank out the default footer
+\fancyhead[C]{Running title $\bullet$ May 2016 $\bullet$ Vol. XXI, No. 1} % Custom header text
+\fancyfoot[RO,LE]{\thepage} % Custom footer text
+
+\usepackage{titling} % Customizing the title section
+
+\usepackage{hyperref} % For hyperlinks in the PDF
+
+%----------------------------------------------------------------------------------------
+%	TITLE SECTION
+%----------------------------------------------------------------------------------------
+
+\setlength{\droptitle}{-4\baselineskip} % Move the title up
+
+\pretitle{\begin{center}\Huge\bfseries} % Article title formatting
+\posttitle{\end{center}} % Article title closing formatting
+\title{Goal Programming} % Article title
+\author{%
+\textsc{Mirdha Suci Ananda, Yuda Hendriawan, Andi Aqil, Sumihar Christian}\thanks{A thank you or further information} \\[1ex] % Your name
+\normalsize Department of Mathematical Computation and Data Science \\ % Your institution
+\normalsize INSTITUT TEKNOLOGI SEPULUH NOPEMBER\\ % Your institution
+}
+
+\date{\today} % Leave empty to omit a date
+\renewcommand{\maketitlehookd}{%
+\begin{abstract}
+\noindent Simulating Goal Programming on a product store sales problem with 3 types Goal Programming initiation method: Lexicographical, Weighted and Chebyshev using Pyomo for mathematical modelling in Python and GLPK for solving the optimization problem using simplex method
+\end{abstract}
+}
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+% Print the title
+\maketitle
+
+%----------------------------------------------------------------------------------------
+%	ARTICLE CONTENTS
+%----------------------------------------------------------------------------------------
+
+\section{Introduction}
+
+\lettrine[nindent=0em,lines=3]{O} rdinary linear program models are not able to solve management cases that require certain
+goals to reach all objectives optimally at the same time. In the linear program model there
+is a Slack variable in the constraint function in the form of a delimiter and a surplus in the
+constraint function in the form of conditions. In solving the case of a linear program the two
+variables function to accommodate the advantages and disadvantages of the left hand side value
+of a constraint function so that it equals the value of the right hand side. However, both of
+these variables are completely uncontrollable in solving the case of linear programs, so the linear
+program model was developed by A. Charles and W. M. Cooper as a goal programming model.
+If there are variables in a linear program that have characteristics similar to the Slack and
+Surplus variables, and are in a constraint equation, then the variable is controlled so that the left
+segment value of a constraint is equal to the value of the right segment. The goal programming
+model is able to solve cases of linear programs that have more than one goal to be achieved.
+The goal or target is a constant value on the right hand side of the constraint function
+Basically the structure of goal programming and linear programming is the same. The
+concept of goal programming is to introduce additional auxiliary variables called deviations
+that act not as variable decision, but only as facilitators to formulate models. This deviation
+is the difference between the desired target value and the results obtained.
+The goal programming model is an extension of the linear program model so that all as-
+sumptions, formation notations, mathematical models, formulation procedures, models and
+solutions are no different. The difference lies only in
+
+%------------------------------------------------
+
+\section{Problem}
+
+Maecenas sed ultricies felis. Sed imperdiet dictum arcu a egestas. 
+\begin{itemize}
+\item Donec dolor arcu, rutrum id molestie in, viverra sed diam
+\item Curabitur feugiat
+\item turpis sed auctor facilisis
+\item arcu eros accumsan lorem, at posuere mi diam sit amet tortor
+\item Fusce fermentum, mi sit amet euismod rutrum
+\item sem lorem molestie diam, iaculis aliquet sapien tortor non nisi
+\item Pellentesque bibendum pretium aliquet
+\end{itemize}
+\blindtext % Dummy text
+
+Text requiring further explanation\footnote{Example footnote}.
+
+%------------------------------------------------
+
+\section{Results}
+
+\begin{table}
+\caption{Example table}
+\centering
+\begin{tabular}{llr}
+\toprule
+\multicolumn{2}{c}{Name} \\
+\cmidrule(r){1-2}
+First name & Last Name & Grade \\
+\midrule
+John & Doe & $7.5$ \\
+Richard & Miles & $2$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\blindtext % Dummy text
+
+\begin{equation}
+\label{eq:emc}
+e = mc^2
+\end{equation}
+
+\blindtext % Dummy text
+
+%------------------------------------------------
+
+\section{Discussion}
+
+\subsection{Subsection One}
+
+A statement requiring citation \cite{Figueredo:2009dg}.
+\blindtext % Dummy text
+
+\subsection{Subsection Two}
+
+\blindtext % Dummy text
+
+%----------------------------------------------------------------------------------------
+%	REFERENCE LIST
+%----------------------------------------------------------------------------------------
+
+\begin{thebibliography}{99} % Bibliography - this is intentionally simple in this template
+
+\bibitem[Figueredo and Wolf, 2009]{Figueredo:2009dg}
+Figueredo, A.~J. and Wolf, P. S.~A. (2009).
+\newblock Assortative pairing and life history strategy - a cross-cultural
+  study.
+\newblock {\em Human Nature}, 20:317--330.
+ 
+\end{thebibliography}
+
+%----------------------------------------------------------------------------------------
+
+\end{document}
