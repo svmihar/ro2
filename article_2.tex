@@ -10,7 +10,7 @@
 \usepackage[T1]{fontenc} % Use 8-bit encoding that has 256 glyphs
 \linespread{1.05} % Line spacing - Palatino needs more space between lines
 \usepackage{microtype} % Slightly tweak font spacing for aesthetics
-
+\usepackage{graphicx} % for pics 
 \usepackage[english]{babel} % Language hyphenation and typographical rules
 
 \usepackage[hmarginratio=1:1,top=32mm,columnsep=20pt]{geometry} % Document margins
@@ -128,24 +128,131 @@ solutions are no different. The difference lies only in
 %------------------------------------------------
 
 \section{General Form}
+	Goal progamming is the one of the mathematical model used to make solution for the problem having many target so it can be got optimal solution. Aran Puntosadewo (2013) said that Goal Programming is for decising the goal notated by numerical for each goal, making objective function for each function, and finding solution to minimize the deviation at the objective function. Goal Programming model try to minimize the deviation between several goal or target, so the value of the right side is as close as possible to same with left side of the equation. 
+	
+	Goal Programming model is the extention of Linier Programming develoved by A. Charles and W. M Cooper at 1956 so all of the asumption, notation, mathematical formula, procuder of model and the solution are not different. The different of this program is just in the deviation exist in objective function and constraint. Linier Pogrmmiing is the mathematical model used to find the optimal solution with minimizing and maximizing objective function based on one constraint. Beside that, Goal Programming have three part, that is decision variable, objective function, and constraint.
+	
+	Having known that Goal Progamming have 3 part that are objective function, goal constraint, non negatif constraint. 
+	\begin{itemize}
+		\item[1. ] Objective Function\\
+		Objective Function in Goal Programming basically is the problem of minimization, because at the objective function, there are deviation variable that has to minimize. Objective Function in the Goal Programming is for minimizing all of the goal constraint that want to be reached.
+		
+		\item[2. ] Non Negatif Constraint\\
+		Non Negatif constraint in Goal Progamming is all of the variable that has positive value or equal to zero. So the decision variable and deviation variable at the Goal Programming problem always has positive value or equal to zero. The notation of non-negative is $x_j,d^-_i,d^+_i \geq 0$
+		
+		\item[3. ] Goal Constraint\\
+		According to Rio Armindo (2006), at the Goal Programming, there are six kind of goal constraint different each other. The Goal from each constraint is decised by connection between objective function. this is the 6's kind of constraint.
+	\end{itemize}
+	
+		\textbf{Common Model of Goal Programming}
+		
+		The first is the common model without priority factor in the structure :
+		\begin{equation*}
+		\text{Minimize}~~ Z = \displaystyle\sum_{i=1}^{m} \left(d^+_i + d^-_i\right)
+		\end{equation*}
+		with goal constraint :
+		\begin{equation*}
+		\begin{array}{rcl}
+		C_{11}x_1+C_{12}x_2 + \dots + C_{1n}x_n + d^-_1 - d^+_1&=&b_1\\
+		C_{21}x_1+C_{22}x_2 + \dots + C_{2n}x_n + d^-_2- d^+_2&=&b_2\\
+		\vdots&&\\
+		C_{m1}x_1+C_{m2}x_2 + \dots + C_{mn}x_n + d^-_m - d^+_m&=&b_m
+		\end{array}
+		\end{equation*}
+		non negative constraint : $x_j,d^-_i,d^+_i \geq 0$, for $i = 1,2,\dots,m$ and $j = 1,2,\dots,n$
+		
+		\vspace{1cm}
+		The Second is the problem at The Goal Programming with structur containing weight :
+		\begin{equation*}
+		\text{Minimize : }~~~ Z = P_1d^-_i + \dots + P_ld^-_i + P_{i+1}d^+_i +\dots + P_kd^+i
+		\end{equation*}
+		with constraint :
+		\begin{equation*}
+		\begin{array}{rcl}
+		C_{11}x_1+C_{12}x_2 + \dots + C_{1n}x_n + d^-_1 - d^+_1&=&b_1\\
+		C_{21}x_1+C_{22}x_2 + \dots + C_{2n}x_n + d^-_2- d^+_2&=&b_2\\
+		\vdots&&\\
+		C_{m1}x_1+C_{m2}x_2 + \dots + C_{mn}x_n + d^-_m - d^+_m&=&b_m
+		\end{array}
+		\end{equation*}
+		Where $P_k$ is the weight of the goal -$k$
+		and $$x_j,d^-_i,d^+_i \geq 0$$
+		$P_k $ can be called by penalty for each goal, so if the goal is not same with sign in beginning, the goal will got penalty as much as $P_k$
 
+\subsection{Weighted Goal Programming}		
+The Second is the problem at The Goal Programming with structure containing weight :
+		\begin{equation*}
+		\text{Minimize : }~~~ Z = P_1d^-_i + \dots + P_ld^-_i + P_{i+1}d^+_i +\dots + P_kd^+i
+		\end{equation*}
+		with constraint :
+		\begin{equation*}
+		\begin{array}{rcl}
+		C_{11}x_1+C_{12}x_2 + \dots + C_{1n}x_n + d^-_1 - d^+_1&=&b_1\\
+		C_{21}x_1+C_{22}x_2 + \dots + C_{2n}x_n + d^-_2- d^+_2&=&b_2\\
+		\vdots&&\\
+		C_{m1}x_1+C_{m2}x_2 + \dots + C_{mn}x_n + d^-_m - d^+_m&=&b_m
+		\end{array}
+		\end{equation*}
+		Where $P_k$ is the weight of the goal -$k$
+		and $$x_j,d^-_i,d^+_i \geq 0$$
+		$P_k $ can be called by penalty for each goal, so if the goal is not same with sign in beginning, the goal will got penalty as much as $P_k$
+		
+\subsection{Lexicographic Goal Programming}
+		The second variant of a Goal Programming method presented in this section is called lexicographic Goal Programming. It can also be found in the literature as preemptive Goal Programming. The main feature of this variant is the existence of a number of priority levels. This variant is used when the decision maker has a clear preference order for satisfying the goals. Each priority level consists of a number of unwanted deviations to be minimized. We define by L the number of priority levels with corresponding index $l = 1, 2, \dots , L.$ Each priority level is a function of a subset of unwanted deviational variables, $h_l(n, p)$. The consensus in the goalprogramming literature is that no more than five priority levels should be used in this variant.
+		
+		A lexicographic Goal Programming problem can be represented by the following
+		formulation
+		$$\text{min }~z = h_1(n,p),h_2(n,p),\dots,h_L(n,p)$$
+		$$\text{Subject to } f_i(x)+n_i+p_i=b_i~~,~~x\in F$$
+		$$n_i,p_i \geq 0, i = 1,2,\dots,m$$
+		
+\subsection{Chebyshev Goal Programming}
+The third variant of a Goal Programming method presented in this section is called
+		Chebyshev Goal Programming. This variant was introduced by Flavell [6] and it is
+		known as Chebyshev Goal Programming, because it uses the Chebyshev distance or L$\infty$ metric. It can also be found in the literature as Minmax Goal Programming. The main idea of this variant is to achieve a balance between the goals. Classical, weighted and lexicographic Goal Programming often find extreme solutions, i.e.,
+		points that lie in the intersection of goals, constraints, and axes. This can lead to an unbalanced solution since some goals are achieved and others are far from satisfactory. In Chebyshev Goal Programming, we introduce additional constraints in order to ensure balance between the goals. This is the only widely-used variant that can find optimal solutions that are not located at extreme points.
+		
+		Let $\lambda$ be the maximal deviation from amongst the set of goals, then a generic
+		form of a Chebyshev Goal Programming problem is the following
+		
 
+\begin{align}
+		\text{min } ~ z &= \lambda \\
+		\text{s.t. } \dfrac{u_in_i}{k_i}+\dfrac{v_ip_i}{k_i} + &\leq \lambda \\
+		f_i(x)+n_i+p_i &= b_i~~~~, x\in F \\
+		n_i,p_i \geq 0, i = 1,2,\dots,m \\
+\end{align}
 %------------------------------------------------
 
 \section{Problem}
+A store produces and sells shirts and jackets. The price of a shirt is at 100 e, while the price of a jacket is at 90 Euro. Every shirt needs 2 $m^2$ of cotton and 5 $m^2$ of linen, while every jacket needs 4 $m^2$ of cotton and 3 $m^2$ of linen. The store can buy from its supplier 600 $m^2$ of cotton and 700 $m^2$ of linen every week. The company aims to achieve a weekly profit of 18,000 Euro. The production time of a pair of each product is 2 man-hours. The company employs 10 people in the production department and would like to keep within the 380 available hours of work each week. The manufacturing capacity of the machine for all products combined is limited to a maximum of 200 products per week. The company has signed a contract with a customer to provide his/her company with at least 60 units of each product per week.
 
 \subsection{Variables}
 $x_1 = $ number of shirts, \\
 $x_2 = $ number of jackets\\
 
 \subsection{Constraints}
-$2x_1 + 4x_2 \leq 600$ Cotton Stock \\
-$5x_1 + 3x_2 \leq 700$ Linen Stock \\
-$100x_1 + 90x_2 \geq 18000$ Weekly Profit minimum \\
-$2x_1 + 2x_2 \leq 380$ Man-hours available \\
-$x_1 + x_2 \leq 200$ Machine Limitation \\
-$x_1$,$x_2 \geq 60$ Minimum Production's Contract 
+\begin{align}
+2x_1 + 4x_2 \leq 600 Cotton  Stock \\
+5x_1 + 3x_2 \leq 700 Linen Stock \\
+100x_1 + 90x_2 \geq 18000 Weekly Profit minimum \\
+2x_1 + 2x_2 \leq 380 Man-hours available \\
+x_1 + x_2 \leq 200 Machine Limitation \\
+x_1,x_2 \geq 60 Minimum Production's Contract 
+\end{align}
 
+\subsection{Modelling}
+So we can formulate the problem into goal programming: 
+\begin{center}
+   \includegraphics[scale=0.6]{/home/svmihar/Documents/kuliah/ro2/project_goal_optimization/prob.png}
+\end{center}
+
+By drawing a plane from the problem we know that it has no possible solution 
+\begin{figure}[h]
+  \includegraphics[scale=0.5]{/home/svmihar/Documents/kuliah/ro2/project_goal_optimization/infeasible.png}
+  \caption{no feasible region}
+  \label{fig:boat1}
+\end{figure}
 
 %------------------------------------------------
 
@@ -537,18 +644,41 @@ Goal & Target & Achieved Value \\
 \end{table}
 
 From the result we have Chebyshev that has most balanced solution
+\pagebreak
 %----------------------------------------------------------------------------------------
 %	REFERENCE LIST
 %----------------------------------------------------------------------------------------
-
-\begin{thebibliography}{99} % Bibliography - this is intentionally simple in this template
-
-\bibitem[Figueredo and Wolf, 2009]{Figueredo:2009dg}
-Figueredo, A.~J. and Wolf, P. S.~A. (2009).
-\newblock Assortative pairing and life history strategy - a cross-cultural
-  study.
-\newblock {\em Human Nature}, 20:317--330.
+\begin{thebibliography}{99} % Bibliography - this is intentionally simple in this template 
  
+\bibitem[Marc J. Schniederjans, 1995]{asdf:asdf}
+Marc J. Schniederjans. ~A. (1995).
+\newblock Goal Programming Methodology and Applications - a cross-cultural
+  study.
+\newblock {\em Goal Programming}, 20:317--330.
+
+
+\bibitem[Papathanasiou and Ploskas, 2017]{Figueredo:2009dg}
+Papathanasiou , ~J. and Ploskas, ~N. (2017).
+\newblock Multiple Criteria Decision Aid. Methods, Examples and Python Implementations - a cross-cultural
+  study.
+\newblock {\em Goal Programming Numerical}, 20:317--330.
+% Jason Papathanasiou, Nikolaos Ploskas - Multiple Criteria Decision Aid. Methods, Examples and Python Implementations (2018, Springer)
+
+
+\bibitem[Papathanasiou and Ploskas, 2017]{Figueredo:2009dg}
+Papathanasiou , ~J. and Ploskas, ~N. (2017).
+\newblock Multiple Criteria Decision Aid. Methods, Examples and Python Implementations - a cross-cultural
+  study.
+\newblock {\em Goal Programming Numerical}, 20:317--330.
+% Jason Papathanasiou, Nikolaos Ploskas - Multiple Criteria Deci
+
+\bibitem[Papathanasiou and Ploskas, 2017]{Figueredo:2009dg}
+Papathanasiou , ~J. and Ploskas, ~N. (2017).
+\newblock Multiple Criteria Decision Aid. Methods, Examples and Python Implementations - a cross-cultural
+  study.
+\newblock {\em Goal Programming Numerical}, 20:317--330.
+% Jason Papathanasiou, Nikolaos Ploskas - Multiple Criteria Deci
+
 \end{thebibliography}
 
 %----------------------------------------------------------------------------------------

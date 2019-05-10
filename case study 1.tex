@@ -1,0 +1,225 @@
+\documentclass[a4paper, 12pt]{article}
+
+\usepackage{geometry}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{adjustbox}
+\usepackage{multirow}
+\usepackage{tabularx}
+\usepackage{graphicx}
+\usepackage{fontenc}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{multicol}
+\usepackage{graphicx}
+\usepackage{wrapfig}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{textcomp}
+\usepackage{fancyhdr}
+\usepackage{enumitem}
+\setlength{\multicolsep}{5.0pt plus 2.0pt minus 1.5pt}% 50% of original values
+\geometry{a4paper, portrait, top=2.5cm, left=2cm, right=2cm, bottom=2.5cm}
+\pagestyle{fancy}
+
+\renewcommand{\baselinestretch}{1.2}
+\newcounter{choice}
+\renewcommand\thechoice{\alph{choice}}
+\newcommand\choicelabel{\thechoice.}
+
+\newenvironment{choices}%
+{\list{\choicelabel}%
+	{\usecounter{choice}\def\makelabel##1{\hspace{0.3cm}\llap{##1}}%
+		\settowidth{\leftmargin}{\hskip\labelsep\hskip 0em}%
+		\def\choice{%
+			\item
+		} % choice
+		\labelwidth\leftmargin\advance\labelwidth-\labelsep
+		\topsep=0pt
+		\partopsep=0pt
+	}%
+}%
+{\endlist}
+
+\newenvironment{oneparchoices}%
+{%
+	\setcounter{choice}{0}%
+	\def\choice{%
+		\refstepcounter{choice}%
+		\ifnum\value{choice}>1\relax
+		\penalty -50\hskip 2cm plus 1em
+		\fi
+		\choicelabel
+		\nobreak\enskip
+	}% choice
+	% If we're continuing the paragraph containing the question,
+	% then leave a bit of space before the first choice:
+	\ifvmode\else\enskip\fi
+	\ignorespaces
+}%
+
+\begin{document}
+	\textbf{\begin{center}
+			\Large{Goal Programming Model Application for Optimization of Accessories Products of PT. Kosama Jaya Banguntapan Bantul by Tri Harjiyanto}
+	\end{center}}
+
+
+
+\vspace{1cm}\textbf{\large{Mathematical Model}}\\
+a. Mazimize production to meet demands
+	\begin{enumerate}[label={\alph*}]
+		\item Variables and parameters used \\
+		The variables and parameters used in this goal programming formulation are as follows:
+		\\ $X_i$ : the $i$th number of product produced
+		\\ $i$ : type of product produced, $i = 1, 2, 3, 4$  
+		\\ $P_i$ : level of demand for products $i$
+		\\ $d_i^-$ : value of deviation below 
+		\\ $d_i^+$ : value of deviation above  
+		\\ $F_1$ : pruduct sales revenue
+		\\ $F_2$ : production costs incurred by the company
+		\\ $H_i$ : selling price per product $i$th unit
+		\\ $B_i$ : production costs per product unit $i$
+		\\ $W_{ij}$ : processing time per product unit $i$ on the machine $j$
+		\\ $JE$ : capacity of regular machine $j$ working hours
+		\\ $JL$ : capacity for overtime work \\
+		
+		\item Formulation of Constraints Function
+		
+			\begin{enumerate}
+				\item The target constraints maximizes the amount of production to meet the number of requests
+				\begin{align}
+				X_i +d_i^- -d_i^+ = P_i
+				\end{align}
+				Where :
+				\\$X_i = $ number of product $i$ produced
+				\\$P_i = $ level of demand for the product $i$
+				\\$d_i^-$ value of deviation below of $P_i$
+				\\$d_i^+$ value of deviation above
+				) of $P_i$\\
+				
+				In order for minimum $d_i^-$ and $d_i^+$, the equation of the objective function $Z$ becomes:
+				\begin{align}
+				Min Z = \sum (d_i^- - d_i^+)
+				\end{align}
+				
+				\item The target constraints maximize sales revenue\\
+				The equation of the objective function $Z$ becomes  :
+				\begin{align}
+				Max \text{ } Z = \sum_{i=1}^{m}H_iX_i
+				\end{align}
+				Where :
+				\\$H_i = $ selling price per product unit $i$
+				\\$X_i = $ number of product $i$ produced
+				\\$m = $ number of types of product\\
+				
+				\item The target constraints minimizez costs of production 
+				Objectiove function :
+				\begin{align}
+				Min Z = \sum_{i=1}^{m}B_iX_i
+				\end{align}
+				Where :
+				$B_i = $production costs per unit of product $i$
+				
+				\item Target Constraints to maximize  machine working hours\\
+				Constraints : 
+				\begin{align}
+				\sum_{i=1}^{m}W_iX_i + d_i^- + d_i^+ = JE
+				\end{align}
+				Where : 
+				\\$W_{ij} = $ time of process per product unit i
+				\\$JE = $capacity of regular machine working hours
+				\\$d_i^-$ value of deviation below of $JR$
+				\\$d_i^+$ value of deviation above of $JR$
+				
+				Objecitive function $Z$ becomes :
+				\begin{align}
+				Min Z = \sum d_i^-
+				\end{align}
+				
+				\item The target constraints minimize overtime working\\
+				Target constraint :
+				\begin{align}
+				d_i^+ \leq JL
+				\end{align}
+				Where :
+				\\$JL =$maximize capacity of  overtime $J$ machine\\
+				Objective function :
+				\begin{align}
+				Min Z = \sum d_i^+
+				\end{align} 
+			\end{enumerate}
+		
+		\item The use of model formulations is as follows:
+		
+			\begin{enumerate}
+			\item Minimize :\\
+			 $Z = ((d_1^- + d_1^+) + (d_2^- + d_2^+) +(d_3^- + d_3^+) +(d_4^- +d_4^+) + (d_5^- + d_5^+) + (d_6^- + d_6^+) +(d_7^- + d_7^+))$ 
+			 \item The target constraint to maximize a mount of production to meet a mount of production\\
+			 To find out the number of demands for  type of product $i$, in this experiment the number of requests was predicted using the Arima method with sales data 12 months in 2013. The purpose of maximizing the amount of production to meet the number of requests has constraints written in the equation (1), which can be described as :
+			 \begin{align}
+			 X_i + d_i^- - d_i^+ = P_i
+			 \end{align}
+			 \begin{align}
+			 X_1 + d_1^- + d_1^+ = 41890,87
+			 \end{align}  
+			 \begin{align}
+			 X_2 + d_2^- + d_2^+ = 33379,18
+			 \end{align} 
+			 \begin{align}
+			 X_3 + d_3^- + d_3^+ = 31558,68
+			 \end{align}
+			 \begin{align}
+			 X_4 + d_4^- + d_4^+ = 34756,75
+			 \end{align}
+			 The company wants to fulfill every demand for the product, so the objective function is to minimize the negative deviation number $(d_i^-)$ which can be shown as follows:
+			 \begin{align}
+			 &Min Z = \sum d_i^- + d_i^+ \\ 
+			 &Min Z = 	d_1^- + d_2^- + d_3^- + d_4^- + d_1^+ + d_2^+ + d_3^+ + d_4^+
+			 \end{align}
+			 
+			 \item The target constraint to maximize sales revenue\\
+			 The company wants to get maximum sales revenue. Equation (2) becomes:
+			 
+			 \begin{align}
+			 &\text{Max } Z = 12450X_1 + 10800X_2 + 15200X_3+7400X_4 \\
+ 			 &12450X_1 + 10800X_2+15200X_3+7400X_4+d_5^-=F_1 \\
+			 &\text{Min } Z = d_5^-
+			 \end{align}
+
+			\item Target constraint minimizes production cost\\
+			The company wants to minimize total production cost to get maximum profit, so equation (4) becomes:
+			\begin{align}
+			&\text{Min } Z = 5590X_1+4481X_2+7245X_3+1365X_4	\\
+			&5590X_1+4481X_2+7245X_3+1365X_4 + d_6^- = F_2	\\
+			&\text{Min }Z = d_6^-
+			\end{align}
+			
+			\item Target constraint to maximize machine working hours\\
+			The company wants to maximize the use of machine, so the objective function is to minimize $d_i^-$ as we see in equation (5), and it becomes:
+			\begin{align}
+			&W_1X_1+W_2X_2+W_3X_3+W_4X_4+d_7^--d_7^+=JE	\\
+			&7,452X_1+8,273X_2+4,002X_3+4,5206X_4+d_7^--d_7^+ = 344480	\\
+			&\text{Min }Z = d_7^-
+			\end{align}
+			
+			\item The target constraints minimize overtime working\\
+			Because $d_i^+$, as in the equation (22), is the deviation value above regular working time, so the value of $d_i^+$ must be controlled and must not exceed maximum working time:
+			\begin{align}
+			&d_j^+ \leqslant JL	\\
+			&d_7^+ \leqslant 1347840
+			\end{align}
+			So the objectiove function is to minimize $d_i^+$ as showed in equation (26)
+			\begin{equation}
+			\text{Min } Z = d_7^+
+			\end{equation}						 
+			\end{enumerate}
+		
+		\item Results and Discussion
+		
+		\hspace{0.64cm}The results of this study are in the form of recommendations or input the optimal number of products that should be produced by the company to obtain effective and efficient production. Completion of the problems formulated in the form of this equation was carried out with the help of the LINGGO 13.0 computer program. In this study, researchers using the LINGO program to find information needed include:
+		\begin{enumerate}
+			\item Information on optimal solution solutions (objective function value, decision variable value, devisional variable value, reduced cost value) and \textit{slack}, \textit{surplus} and \textit{dual price values}.
+			\item Information about sensitivity analysis to the value of the right segment of the equation model.
+		\end{enumerate}		
+		\end{enumerate}	
+\end{document}

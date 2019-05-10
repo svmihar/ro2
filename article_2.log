@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.5.10)  10 MAY 2019 05:34
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.5.10)  10 MAY 2019 07:56
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -143,6 +143,26 @@ Package microtype Info: Loading configuration file microtype.cfg.
 (/usr/share/texlive/texmf-dist/tex/latex/microtype/microtype.cfg
 File: microtype.cfg 2018/01/14 v2.7a microtype main configuration file (RS)
 ))
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2017/06/25 v1.2c Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 99.
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen113
+\Gin@req@width=\dimen114
+)
 (/usr/share/texlive/texmf-dist/tex/generic/babel/babel.sty
 Package: babel 2018/02/14 3.18 The Babel package
 
@@ -155,7 +175,7 @@ Language: english 2017/06/06 v3.3r English support from the babel system
 (/usr/share/texlive/texmf-dist/tex/generic/babel/babel.def
 File: babel.def 2018/02/14 3.18 Babel common definitions
 \babel@savecnt=\count119
-\U@D=\dimen113
+\U@D=\dimen115
 
 (/usr/share/texlive/texmf-dist/tex/generic/babel/txtbabel.def)
 \bbl@dirlevel=\count120
@@ -182,14 +202,14 @@ Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 \Gm@cnth=\count121
 \Gm@cntv=\count122
 \c@Gm@tempcnt=\count123
-\Gm@bindingoffset=\dimen114
-\Gm@wd@mp=\dimen115
-\Gm@odd@mp=\dimen116
-\Gm@even@mp=\dimen117
-\Gm@layoutwidth=\dimen118
-\Gm@layoutheight=\dimen119
-\Gm@layouthoffset=\dimen120
-\Gm@layoutvoffset=\dimen121
+\Gm@bindingoffset=\dimen116
+\Gm@wd@mp=\dimen117
+\Gm@odd@mp=\dimen118
+\Gm@even@mp=\dimen119
+\Gm@layoutwidth=\dimen120
+\Gm@layoutheight=\dimen121
+\Gm@layouthoffset=\dimen122
+\Gm@layoutvoffset=\dimen123
 \Gm@dimlist=\toks21
 )
 (/usr/share/texlive/texmf-dist/tex/latex/caption/caption.sty
@@ -198,67 +218,67 @@ Package: caption 2016/02/21 v3.3-144 Customizing captions (AR)
 (/usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty
 Package: caption3 2016/05/22 v1.7-166 caption3 kernel (AR)
 Package caption3 Info: TeX engine: e-TeX on input line 67.
-\captionmargin=\dimen122
-\captionmargin@=\dimen123
-\captionwidth=\dimen124
-\caption@tempdima=\dimen125
-\caption@indent=\dimen126
-\caption@parindent=\dimen127
-\caption@hangindent=\dimen128
+\captionmargin=\dimen124
+\captionmargin@=\dimen125
+\captionwidth=\dimen126
+\caption@tempdima=\dimen127
+\caption@indent=\dimen128
+\caption@parindent=\dimen129
+\caption@hangindent=\dimen130
 )
 \c@ContinuedFloat=\count124
 )
 (/usr/share/texlive/texmf-dist/tex/latex/booktabs/booktabs.sty
 Package: booktabs 2016/04/27 v1.618033 publication quality tables
-\heavyrulewidth=\dimen129
-\lightrulewidth=\dimen130
-\cmidrulewidth=\dimen131
-\belowrulesep=\dimen132
-\belowbottomsep=\dimen133
-\aboverulesep=\dimen134
-\abovetopsep=\dimen135
-\cmidrulesep=\dimen136
-\cmidrulekern=\dimen137
-\defaultaddspace=\dimen138
+\heavyrulewidth=\dimen131
+\lightrulewidth=\dimen132
+\cmidrulewidth=\dimen133
+\belowrulesep=\dimen134
+\belowbottomsep=\dimen135
+\aboverulesep=\dimen136
+\abovetopsep=\dimen137
+\cmidrulesep=\dimen138
+\cmidrulekern=\dimen139
+\defaultaddspace=\dimen140
 \@cmidla=\count125
 \@cmidlb=\count126
-\@aboverulesep=\dimen139
-\@belowrulesep=\dimen140
+\@aboverulesep=\dimen141
+\@belowrulesep=\dimen142
 \@thisruleclass=\count127
 \@lastruleclass=\count128
-\@thisrulewidth=\dimen141
+\@thisrulewidth=\dimen143
 )
 (/usr/share/texlive/texmf-dist/tex/latex/lettrine/lettrine.sty
 File: lettrine.sty 2015/08/31 v1.9 (Daniel Flipo)
 \c@DefaultLines=\count129
 \c@DefaultDepth=\count130
-\DefaultFindent=\dimen142
-\DefaultNindent=\dimen143
-\DefaultSlope=\dimen144
-\DiscardVskip=\dimen145
+\DefaultFindent=\dimen144
+\DefaultNindent=\dimen145
+\DefaultSlope=\dimen146
+\DiscardVskip=\dimen147
 \L@lbox=\box28
 \L@tbox=\box29
 \c@L@lines=\count131
 \c@L@depth=\count132
-\L@Pindent=\dimen146
-\L@Findent=\dimen147
-\L@Nindent=\dimen148
-\L@lraise=\dimen149
-\L@first=\dimen150
-\L@next=\dimen151
-\L@slope=\dimen152
-\L@height=\dimen153
-\L@novskip=\dimen154
-\LettrineWidth=\dimen155
-\LettrineHeight=\dimen156
-\LettrineDepth=\dimen157
+\L@Pindent=\dimen148
+\L@Findent=\dimen149
+\L@Nindent=\dimen150
+\L@lraise=\dimen151
+\L@first=\dimen152
+\L@next=\dimen153
+\L@slope=\dimen154
+\L@height=\dimen155
+\L@novskip=\dimen156
+\LettrineWidth=\dimen157
+\LettrineHeight=\dimen158
+\LettrineDepth=\dimen159
 
 Loading lettrine.cfg
 (/usr/share/texlive/texmf-dist/tex/latex/lettrine/lettrine.cfg))
 (/usr/share/texlive/texmf-dist/tex/latex/enumitem/enumitem.sty
 Package: enumitem 2011/09/28 v3.5.2 Customized lists
 \labelindent=\skip47
-\enit@outerparindent=\dimen158
+\enit@outerparindent=\dimen160
 \enit@toks=\toks22
 \enit@inbox=\box30
 \enitdp@description=\count133
@@ -276,12 +296,12 @@ Package: titlesec 2016/03/21 v2.10.2 Sectioning titles
 \ttl@box=\box31
 \beforetitleunit=\skip53
 \aftertitleunit=\skip54
-\ttl@plus=\dimen159
-\ttl@minus=\dimen160
+\ttl@plus=\dimen161
+\ttl@minus=\dimen162
 \ttl@toksa=\toks23
-\titlewidth=\dimen161
-\titlewidthlast=\dimen162
-\titlewidthfirst=\dimen163
+\titlewidth=\dimen163
+\titlewidthlast=\dimen164
+\titlewidthfirst=\dimen165
 )
 (/usr/share/texlive/texmf-dist/tex/latex/titlesec/block.tss
 File: block.tss 2016/03/15
@@ -357,7 +377,7 @@ Package: auxhook 2016/05/16 v1.4 Hooks for auxiliary files (HO)
 (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/kvoptions.sty
 Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
 )
-\@linkdim=\dimen164
+\@linkdim=\dimen166
 \Hy@linkcounter=\count134
 \Hy@pagecounter=\count135
 
@@ -383,10 +403,10 @@ Package hyperref Info: Bookmarks ON on input line 4762.
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
 LaTeX Info: Redefining \url on input line 5115.
-\XeTeXLinkMargin=\dimen165
+\XeTeXLinkMargin=\dimen167
 \Fld@menulength=\count138
-\Field@Width=\dimen166
-\Fld@charsize=\dimen167
+\Field@Width=\dimen168
+\Fld@charsize=\dimen169
 Package hyperref Info: Hyper figures OFF on input line 6369.
 Package hyperref Info: Link nesting OFF on input line 6374.
 Package hyperref Info: Hyper index ON on input line 6377.
@@ -419,14 +439,14 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 \lst@gtempboxa=\box32
 \lst@token=\toks24
 \lst@length=\count145
-\lst@currlwidth=\dimen168
+\lst@currlwidth=\dimen170
 \lst@column=\count146
 \lst@pos=\count147
-\lst@lostspace=\dimen169
-\lst@width=\dimen170
+\lst@lostspace=\dimen171
+\lst@width=\dimen172
 \lst@newlines=\count148
 \lst@lineno=\count149
-\lst@maxwidth=\dimen171
+\lst@maxwidth=\dimen173
 
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
@@ -446,14 +466,18 @@ Package: color 2016/07/10 v1.1e Standard LaTeX Color (DPC)
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package color Info: Driver file: pdftex.def on input line 147.
-
-(/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def
-File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
-))
+)
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2015/06/04 1.6 listings language file
 )
-(./article_2.aux)
+(./article_2.aux
+
+LaTeX Warning: Label `Figueredo:2009dg' multiply defined.
+
+
+LaTeX Warning: Label `Figueredo:2009dg' multiply defined.
+
+)
 \openout1 = `article_2.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 96.
@@ -488,6 +512,36 @@ Package microtype Info: No adjustment of character kerning.
 (/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-ppl.cfg
 File: mt-ppl.cfg 2005/11/16 v1.6 microtype config. file: Palatino (RS)
 )
+(/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count152
+\scratchdimen=\dimen174
+\scratchbox=\box34
+\nofMPsegments=\count153
+\nofMParguments=\count154
+\everyMPshowfont=\toks25
+\MPscratchCnt=\count155
+\MPscratchDim=\dimen175
+\MPnumerator=\count156
+\makeMPintoPDFobject=\count157
+\everyMPtoPDFconversion=\toks26
+) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
+
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
+)
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+38.
+Package grfext Info: Graphics extension search list:
+(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 456.
+
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
@@ -527,7 +581,7 @@ Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: hyperref package is loaded.
 Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
-\AtBeginShipoutBox=\box34
+\AtBeginShipoutBox=\box35
 Package hyperref Info: Link coloring OFF on input line 96.
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
@@ -535,7 +589,7 @@ Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
-\c@section@level=\count152
+\c@section@level=\count158
 )
 LaTeX Info: Redefining \ref on input line 96.
 LaTeX Info: Redefining \pageref on input line 96.
@@ -545,27 +599,13 @@ LaTeX Info: Redefining \nameref on input line 96.
 \@outlinefile=\write3
 \openout3 = `article_2.out'.
 
-\c@lstlisting=\count153
-
-(/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
-[Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count154
-\scratchdimen=\dimen172
-\scratchbox=\box35
-\nofMPsegments=\count155
-\nofMParguments=\count156
-\everyMPshowfont=\toks25
-\MPscratchCnt=\count157
-\MPscratchDim=\dimen173
-\MPnumerator=\count158
-\makeMPintoPDFobject=\count159
-\everyMPtoPDFconversion=\toks26
-)
+\c@lstlisting=\count159
 LaTeX Font Info:    Font shape `T1/pplx/bx/n' in size <24.88> not available
 (Font)              Font shape `T1/pplx/b/n' tried instead on input line 100.
 LaTeX Font Info:    Try loading font information for OT1+pplx on input line 100
 .
- (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1pplx.fd
+
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1pplx.fd
 File: ot1pplx.fd 2004/09/06 font definitions for OT1/pplx.
 )
 LaTeX Font Info:    Try loading font information for OML+zplm on input line 100
@@ -613,55 +653,119 @@ LaTeX Font Info:    Font shape `T1/pplx/bx/n' in size <10> not available
 Package microtype Info: Character `029' is missing
 (microtype)             in font `T1/pplx/m/sc/10'.
 (microtype)             Ignoring protrusion settings for this character.
-
-Underfull \hbox (badness 10000) in paragraph at lines 138--140
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 156--160
-\T1/pplx/m/n/10 (+20) Lexicographical Goal Pro-gram-ming use
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 156--160
-
- []
-
 [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 165--171
+Overfull \hbox (24.30797pt too wide) detected at line 161
+[]
+ []
+
+
+Overfull \hbox (53.53256pt too wide) detected at line 168
+[]   \OML/zplm/m/it/10 Z \OT1/zplm/m/n/10 = \OML/zplm/m/it/10 P[]d[] \OT1/zplm/
+m/n/10 + [] + \OML/zplm/m/it/10 P[]d[] \OT1/zplm/m/n/10 + \OML/zplm/m/it/10 P[]
+d[] \OT1/zplm/m/n/10 + [] + \OML/zplm/m/it/10 P[]d[]i
+ []
+
+
+Overfull \hbox (24.30797pt too wide) detected at line 177
+[]
+ []
+
+
+Overfull \hbox (53.53256pt too wide) detected at line 186
+[]   \OML/zplm/m/it/10 Z \OT1/zplm/m/n/10 = \OML/zplm/m/it/10 P[]d[] \OT1/zplm/
+m/n/10 + [] + \OML/zplm/m/it/10 P[]d[] \OT1/zplm/m/n/10 + \OML/zplm/m/it/10 P[]
+d[] \OT1/zplm/m/n/10 + [] + \OML/zplm/m/it/10 P[]d[]i
+ []
+
+
+Overfull \hbox (24.30797pt too wide) detected at line 195
+[]
+ []
+
+[2]
+Underfull \hbox (badness 1924) in paragraph at lines 215--217
+[]\T1/pplx/m/n/10 (+20) Let $\OML/zplm/m/it/10 ^^U$ \T1/pplx/m/n/10 (+20) be th
+e max-i-mal de-vi-a-tion from
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 231--233
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 181--182
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [3]
+</home/svmihar/Documents/kuliah/ro2/project_goal_optimization/prob.png, id=89, 
+320.19624pt x 193.72375pt>
+File: /home/svmihar/Documents/kuliah/ro2/project_goal_optimization/prob.png Gra
+phic file (type png)
+<use /home/svmihar/Documents/kuliah/ro2/project_goal_optimization/prob.png>
+Package pdftex.def Info: /home/svmihar/Documents/kuliah/ro2/project_goal_optimi
+zation/prob.png  used on input line 247.
+(pdftex.def)             Requested size: 192.11922pt x 116.23514pt.
+</home/svmihar/Documents/kuliah/ro2/project_goal_optimization/infeasible.png, i
+d=91, 462.72874pt x 236.885pt>
+File: /home/svmihar/Documents/kuliah/ro2/project_goal_optimization/infeasible.p
+ng Graphic file (type png)
+<use /home/svmihar/Documents/kuliah/ro2/project_goal_optimization/infeasible.pn
+g>
+Package pdftex.def Info: /home/svmihar/Documents/kuliah/ro2/project_goal_optimi
+zation/infeasible.png  used on input line 252.
+(pdftex.def)             Requested size: 231.3638pt x 118.4422pt.
+
+Overfull \hbox (26.3615pt too wide) in paragraph at lines 252--253
+[][] 
+ []
+
+LaTeX Font Info:    Font shape `T1/pplx/bx/n' in size <9> not available
+(Font)              Font shape `T1/pplx/b/n' tried instead on input line 253.
+
+Underfull \hbox (badness 10000) in paragraph at lines 263--267
+\T1/pplx/m/n/10 (+20) Lexicographical Goal Pro-gram-ming use
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 263--267
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 183--188
+Underfull \hbox (badness 10000) in paragraph at lines 272--278
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 199--200
+Underfull \hbox (badness 10000) in paragraph at lines 288--289
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 201--206
+Underfull \hbox (badness 10000) in paragraph at lines 290--295
+
+ []
+
+[4 </home/svmihar/Documents/kuliah/ro2/project_goal_optimization/prob.png> </ho
+me/svmihar/Documents/kuliah/ro2/project_goal_optimization/infeasible.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 306--307
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 216--218
+Underfull \hbox (badness 10000) in paragraph at lines 308--313
 
  []
 
-LaTeX Font Info:    Try loading font information for T1+cmtt on input line 229.
+
+Underfull \hbox (badness 10000) in paragraph at lines 323--325
+
+ []
+
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 336.
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
@@ -670,66 +774,97 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `cmtt' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
- [2]
-Underfull \vbox (badness 10000) has occurred while \output is active []
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [3]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [4]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [5]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-LaTeX Font Info:    Font shape `T1/pplx/bx/n' in size <9> not available
-(Font)              Font shape `T1/pplx/b/n' tried instead on input line 498.
+ [6]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-Underfull \hbox (badness 1748) in paragraph at lines 547--551
-[]\T1/pplx/m/n/10 (+20) Figueredo, A. J.
+ [7]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [8]
+Underfull \vbox (badness 4582) has occurred while \output is active []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 654--658
+[]\T1/pplx/m/n/10 (+20) Marc J.
  []
 
-[6]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 556.
- [7
 
-]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 556.
+Underfull \hbox (badness 10000) in paragraph at lines 661--666
+[]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 669--674
+[]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 676--681
+[]
+ []
+
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 686.
+[9pdfTeX warning (ext4): destination with the same identifier (name{cite.Figuer
+edo:2009dg}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.686 \end{document}
+                    pdfTeX warning (ext4): destination with the same identifier
+ (name{cite.Figueredo:2009dg}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.686 \end{document}
+                    ]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 686.
  (./article_2.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 556.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 556.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 686.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 686.
 Package rerunfilecheck Info: File `article_2.out' has not changed.
-(rerunfilecheck)             Checksum: 9B1CC1FCDD168189D777120A5BF805B6;518.
+(rerunfilecheck)             Checksum: AD107977C70A6395394A42AA9072DE10;808.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 556.
+
+LaTeX Warning: There were multiply-defined labels.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 686.
  ) 
 Here is how much of TeX's memory you used:
- 12215 strings out of 494923
- 184670 string characters out of 6180742
- 428518 words of memory out of 5000000
- 14878 multiletter control sequences out of 15000+600000
- 70168 words of font info for 235 fonts, out of 8000000 for 9000
+ 12598 strings out of 494923
+ 190774 string characters out of 6180742
+ 431158 words of memory out of 5000000
+ 15181 multiletter control sequences out of 15000+600000
+ 75549 words of font info for 265 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 37i,13n,43p,291b,1878s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 37i,13n,43p,851b,1874s stack positions out of 5000i,500n,10000p,200000b,80000s
  </home/svmihar/.texlive2017/texmf-var/fonts/pk/ljfour/jknappen/ec/ectt0900.6
 00pk>{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/tex
-live/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/te
-xmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-di
-st/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/font
-s/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texlive/texmf-dist/fonts/type1
-/public/fpl/fplrc8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino
-/uplb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb>
-</usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on article_2.pdf (7 pages, 127165 bytes).
+live/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type
+1/public/amsfonts/cm/cmsy9.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
+c/mathpazo/fplmr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mathpazo
+/fplmri.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/fpl/fplrc8a.pfb><
+/usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/share/t
+exlive/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/share/texlive/texmf
+-dist/fonts/type1/urw/palatino/uplri8a.pfb>
+Output written on article_2.pdf (9 pages, 210719 bytes).
 PDF statistics:
- 487 PDF objects out of 1000 (max. 8388607)
- 405 compressed objects within 5 object streams
- 269 named destinations out of 1000 (max. 500000)
- 61521 words of extra memory for PDF output out of 61914 (max. 10000000)
+ 544 PDF objects out of 1000 (max. 8388607)
+ 453 compressed objects within 5 object streams
+ 288 named destinations out of 1000 (max. 500000)
+ 62075 words of extra memory for PDF output out of 74296 (max. 10000000)
 
